@@ -31,6 +31,7 @@
 	gap="1rem"
 	{items}
 	breakpointCols={{
+		default: 5,
 		500: 1,
 		700: 2,
 		900: 3,

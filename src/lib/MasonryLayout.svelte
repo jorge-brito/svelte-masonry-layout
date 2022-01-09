@@ -1,13 +1,16 @@
 <script context="module" lang="ts">
 	import { onMount, afterUpdate } from 'svelte';
-	export type MasonryColumns = Record<number, number>;
+	export type MasonryColumns = {
+		default?: string | number;
+		[key: string | number]: string | number;
+	};
 
 	type Styles = Record<string, unknown>;
 
 	const setStyles = (node: HTMLElement, styles: Styles): void => {
 		for (const key in styles) {
-			const value = styles[key].toString();
-			node.style.setProperty('--' + key, value);
+			const value = styles[key];
+			if (value) node.style.setProperty('--' + key, value.toString());
 		}
 	};
 
@@ -25,8 +28,9 @@
 	export let items = [] as unknown[];
 	export let gap = '10px';
 	export let columns = 'repeat(auto-fill, minmax(250px, 1fr))';
-	export let width = '100%';
-	export let height = '100%';
+	export let width = null;
+	export let height = null;
+	export let overflow = null;
 	export let breakpointCols = null as MasonryColumns;
 	export { className as class };
 
@@ -53,7 +57,9 @@
 					grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
 					break;
 				} else {
-					grid.style.gridTemplateColumns = columns;
+					grid.style.gridTemplateColumns = breakpointCols.default
+						? `repeat(${breakpointCols.default}, 1fr)`
+						: columns;
 				}
 			}
 		}

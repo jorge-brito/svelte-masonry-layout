@@ -28,9 +28,8 @@
 	export let items = [] as unknown[];
 	export let gap = '10px';
 	export let columns = 'repeat(auto-fill, minmax(250px, 1fr))';
-	export let width = null;
-	export let height = null;
-	export let overflow = null;
+	export let width: string = null;
+	export let height: string = null;
 	export let breakpointCols = null as MasonryColumns;
 	export { className as class };
 
@@ -101,6 +100,5 @@
 		grid-auto-rows: 0;
 		width: var(--width);
 		height: var(--height);
-		overflow: auto;
 	}
 </style>

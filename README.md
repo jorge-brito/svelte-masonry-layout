@@ -96,6 +96,7 @@ For example:
 <MasonryLayout
    breakpointCols={{
       // breakpoint (in px) : number of columns
+      default: 5, // display 5 columns by default
       400:  1, // until 400px, display 1 column
       600:  2, // until 600px, display 2 columns
       800:  3, // until 800px, display 3 columns

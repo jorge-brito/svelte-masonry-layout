@@ -96,10 +96,10 @@ For example:
 <MasonryLayout
    breakpointCols={{
       // breakpoint (in px) : number of columns
-      400:  1, // at 400px, display 1 column
-      600:  2, // at 600px, display 2 columns
-      800:  3, // at 800px, display 3 columns
-      1000: 4, // at 1000px, display 4 columns
+      400:  1, // until 400px, display 1 column
+      600:  2, // until 600px, display 2 columns
+      800:  3, // until 800px, display 3 columns
+      1000: 4, // until 1000px, display 4 columns
    }}
 >
    ...

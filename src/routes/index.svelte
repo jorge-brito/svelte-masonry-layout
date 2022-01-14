@@ -3,6 +3,7 @@
 	import { rand, range } from '@utils';
 
 	const itemCount = 30;
+	let columnWidth: number;
 
 	const randomItem = () => ({
 		height: rand(400, 100),
@@ -23,6 +24,8 @@
 			}
 		}
 	};
+
+	$: console.log({ columnWidth });
 </script>
 
 <svelte:window on:scroll={scroll} />
@@ -30,6 +33,7 @@
 <MasonryLayout
 	gap="1rem"
 	{items}
+	bind:columnWidth
 	breakpointCols={{
 		default: 5,
 		500: 1,

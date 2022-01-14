@@ -3,7 +3,7 @@
 	import { rand, range } from '@utils';
 
 	const itemCount = 30;
-	let columnWidth: number;
+	let columnWidth: number = 0;
 
 	const randomItem = () => ({
 		height: rand(400, 100),

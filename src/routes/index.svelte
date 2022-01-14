@@ -31,15 +31,15 @@
 <svelte:window on:scroll={scroll} />
 
 <MasonryLayout
-	gap="1rem"
+	gap="1px"
 	{items}
 	bind:columnWidth
 	breakpointCols={{
-		default: 5,
-		500: 1,
-		700: 2,
-		900: 3,
-		1200: 4
+		default: 6,
+		500: 2,
+		700: 3,
+		900: 4,
+		1200: 5
 	}}
 >
 	{#each items as item}

@@ -31,7 +31,7 @@
 	export let width: string = null;
 	export let height: string = null;
 	export let breakpointCols = null as MasonryColumns;
-	export let columnWidth = 0
+	export let columnWidth = 0;
 	export { className as class };
 
 	items && {};
@@ -67,8 +67,8 @@
 
 	export const updateGrid = (items?: unknown) => {
 		if (grid) {
-			columnWidth = parseFloat(getComputedStyle(grid).gridTemplateColumns)
 			updateGridWidth();
+			columnWidth = parseFloat(getComputedStyle(grid).gridTemplateColumns);
 			rowGap = parseInt(getComputedStyle(grid).rowGap);
 			const allItems = Array.from(grid.children);
 			allItems.forEach(resizeItem);

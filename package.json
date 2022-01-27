@@ -1,7 +1,7 @@
 {
   "name": "svelte-masonry-layout",
   "description": "A simple masonry-based layout component for svelte",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "keywords": [
     "svelte",
     "masonry-layout",
